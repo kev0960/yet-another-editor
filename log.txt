@@ -1,0 +1,1238 @@
+---------- LITERAL TABLE BEGINS ------------
+
+	noptr-abstract-declarator
+	balanced-token
+	ud-suffix
+	pointer-literal
+	nested-name-specifier
+	translation-unit
+	boolean-literal
+	lambda-declarator
+	declarator-id
+	pseudo-destructor-name
+	unary-operator
+	qualified-namespace-specifier
+	shift-expression
+
+!
+	overloadable-operator
+	unary-operator
+	preprocessing-op-or-punc
+
+!=
+	overloadable-operator
+	equality-expression
+	preprocessing-op-or-punc
+
+"
+	raw-string
+	string-literal
+	header-name
+
+""
+	literal-operator-id
+
+#
+	control-line
+	endif-line
+	else-group
+	elif-group
+	if-group
+	group-part
+	preprocessing-op-or-punc
+
+##
+	preprocessing-op-or-punc
+
+%
+	overloadable-operator
+	multiplicative-expression
+	preprocessing-op-or-punc
+
+%:
+	preprocessing-op-or-punc
+
+%:%:
+	preprocessing-op-or-punc
+
+%=
+	overloadable-operator
+	assignment-operator
+	preprocessing-op-or-punc
+
+%>
+	preprocessing-op-or-punc
+
+&
+	overloadable-operator
+	ref-qualifier
+	unary-operator
+	and-expression
+	capture
+	capture-default
+	ptr-operator
+	preprocessing-op-or-punc
+
+&&
+	overloadable-operator
+	ref-qualifier
+	logical-and-expression
+	ptr-operator
+	preprocessing-op-or-punc
+
+&=
+	overloadable-operator
+	assignment-operator
+	preprocessing-op-or-punc
+
+'
+	character-literal
+
+(
+	noexcept-specification
+	mem-initializer
+	initializer
+	new-initializer
+	attribute-argument-clause
+	balanced-token
+	new-placement
+	handler
+	iteration-statement
+	unary-expression
+	lambda-declarator
+	noexcept-expression
+	asm-definition
+	dynamic-exception-specification
+	primary-expression
+	static_assert-declaration
+	decltype-specifier
+	raw-string
+	preprocessing-op-or-punc
+	new-expression
+	postfix-expression
+	cast-expression
+	parameters-and-qualifiers
+	selection-statement
+	noptr-declarator
+	alignment-specifier
+	noptr-abstract-declarator
+
+()
+	overloadable-operator
+
+)
+	control-line
+	noexcept-specification
+	mem-initializer
+	initializer
+	new-initializer
+	attribute-argument-clause
+	balanced-token
+	new-placement
+	handler
+	iteration-statement
+	unary-expression
+	lambda-declarator
+	noexcept-expression
+	asm-definition
+	dynamic-exception-specification
+	primary-expression
+	static_assert-declaration
+	decltype-specifier
+	raw-string
+	preprocessing-op-or-punc
+	new-expression
+	postfix-expression
+	cast-expression
+	parameters-and-qualifiers
+	selection-statement
+	noptr-declarator
+	alignment-specifier
+	noptr-abstract-declarator
+
+*
+	overloadable-operator
+	multiplicative-expression
+	unary-operator
+	ptr-operator
+	preprocessing-op-or-punc
+
+*=
+	overloadable-operator
+	assignment-operator
+	preprocessing-op-or-punc
+
++
+	overloadable-operator
+	additive-expression
+	unary-operator
+	sign
+	preprocessing-op-or-punc
+
+++
+	overloadable-operator
+	unary-expression
+	postfix-expression
+	preprocessing-op-or-punc
+
++=
+	overloadable-operator
+	assignment-operator
+	preprocessing-op-or-punc
+
+,
+	control-line
+	template-argument-list
+	mem-initializer-list
+	base-specifier-list
+	initializer-list
+	parameter-declaration-list
+	preprocessing-op-or-punc
+	overloadable-operator
+	expression
+	lambda-capture
+	type-id-list
+	member-declarator-list
+	static_assert-declaration
+	capture-list
+	init-declarator-list
+	identifier-list
+	template-parameter-list
+	parameter-declaration-clause
+	enum-specifier
+	enumerator-list
+	braced-init-list
+	attribute-list
+
+-
+	overloadable-operator
+	additive-expression
+	unary-operator
+	sign
+	preprocessing-op-or-punc
+
+--
+	overloadable-operator
+	unary-expression
+	postfix-expression
+	preprocessing-op-or-punc
+
+-=
+	overloadable-operator
+	assignment-operator
+	preprocessing-op-or-punc
+
+->
+	overloadable-operator
+	trailing-return-type
+	postfix-expression
+	preprocessing-op-or-punc
+
+->*
+	overloadable-operator
+	pm-expression
+	preprocessing-op-or-punc
+
+.
+	fractional-constant
+	postfix-expression
+	preprocessing-op-or-punc
+	pp-number
+
+.*
+	pm-expression
+	preprocessing-op-or-punc
+
+...
+	control-line
+	type-id-list
+	template-argument-list
+	type-parameter
+	mem-initializer-list
+	preprocessing-op-or-punc
+	alignment-specifier
+	parameter-declaration-clause
+	capture-list
+	unary-expression
+	declarator-id
+	attribute-list
+	abstract-declarator
+	exception-declaration
+	initializer-list
+	base-specifier-list
+
+/
+	overloadable-operator
+	multiplicative-expression
+	preprocessing-op-or-punc
+
+/=
+	overloadable-operator
+	assignment-operator
+	preprocessing-op-or-punc
+
+0
+	pure-specifier
+	hexadecimal-digit
+	octal-digit
+	octal-literal
+	digit
+
+0X
+	hexadecimal-literal
+
+0x
+	hexadecimal-literal
+
+1
+	hexadecimal-digit
+	octal-digit
+	nonzero-digit
+	digit
+
+2
+	hexadecimal-digit
+	octal-digit
+	nonzero-digit
+	digit
+
+3
+	hexadecimal-digit
+	octal-digit
+	nonzero-digit
+	digit
+
+4
+	hexadecimal-digit
+	octal-digit
+	nonzero-digit
+	digit
+
+5
+	hexadecimal-digit
+	octal-digit
+	nonzero-digit
+	digit
+
+6
+	hexadecimal-digit
+	octal-digit
+	nonzero-digit
+	digit
+
+7
+	hexadecimal-digit
+	octal-digit
+	nonzero-digit
+	digit
+
+8
+	hexadecimal-digit
+	nonzero-digit
+	digit
+
+9
+	hexadecimal-digit
+	nonzero-digit
+	digit
+
+:
+	ctor-initializer
+	base-clause
+	member-specification
+	enum-base
+	iteration-statement
+	labeled-statement
+	member-declarator
+	conditional-expression
+	preprocessing-op-or-punc
+
+::
+	typename-specifier
+	class-or-decltype
+	ptr-operator
+	attribute-scoped-token
+	using-directive
+	preprocessing-op-or-punc
+	new-expression
+	delete-expression
+	qualified-id
+	nested-name-specifier
+	declarator-id
+	pseudo-destructor-name
+	qualified-namespace-specifier
+	elaborated-type-specifier
+	simple-type-specifier
+	using-declaration
+
+:>
+	preprocessing-op-or-punc
+
+;
+	member-declaration
+	asm-definition
+	namespace-alias-definition
+	preprocessing-op-or-punc
+	opaque-enum-declaration
+	expression-statement
+	static_assert-declaration
+	empty-declaration
+	iteration-statement
+	jump-statement
+	function-definition
+	using-declaration
+	alias-declaration
+	using-directive
+	simple-declaration
+	attribute-declaration
+
+<
+	explicit-specialization
+	header-name
+	preprocessing-op-or-punc
+	postfix-expression
+	template-declaration
+	simple-template-id
+	relational-expression
+	operator-function-id
+	template-id
+	overloadable-operator
+	type-parameter
+
+<%
+	preprocessing-op-or-punc
+
+<:
+	preprocessing-op-or-punc
+
+<<
+	overloadable-operator
+	shift-expression
+	preprocessing-op-or-punc
+
+<<=
+	overloadable-operator
+	assignment-operator
+	preprocessing-op-or-punc
+
+<=
+	overloadable-operator
+	relational-expression
+	preprocessing-op-or-punc
+
+=
+	type-parameter
+	overloadable-operator
+	preprocessing-op-or-punc
+	capture-default
+	assignment-operator
+	brace-or-equal-initializer
+	condition
+	pure-specifier
+	enumerator-definition
+	namespace-alias-definition
+	alias-declaration
+	parameter-declaration
+	function-definition
+
+==
+	overloadable-operator
+	equality-expression
+	preprocessing-op-or-punc
+
+>
+	explicit-specialization
+	header-name
+	preprocessing-op-or-punc
+	postfix-expression
+	template-declaration
+	simple-template-id
+	relational-expression
+	operator-function-id
+	template-id
+	overloadable-operator
+	type-parameter
+
+>=
+	overloadable-operator
+	relational-expression
+	preprocessing-op-or-punc
+
+>>
+	overloadable-operator
+	shift-expression
+	preprocessing-op-or-punc
+
+>>=
+	overloadable-operator
+	assignment-operator
+	preprocessing-op-or-punc
+
+?
+	conditional-expression
+	preprocessing-op-or-punc
+
+A
+	hexadecimal-digit
+	nondigit
+
+B
+	hexadecimal-digit
+	nondigit
+
+C
+	hexadecimal-digit
+	nondigit
+
+C_CHAR
+	c-char
+
+D
+	hexadecimal-digit
+	nondigit
+
+D_CHAR
+	d-char
+
+E
+	exponent-part
+	hexadecimal-digit
+	nondigit
+	pp-number
+
+F
+	floating-suffix
+	hexadecimal-digit
+	nondigit
+
+G
+	nondigit
+
+H
+	nondigit
+
+H_CHAR
+	h-char
+
+I
+	nondigit
+
+IMPLEMENT_DEFINED_CHARACTER
+	identifier-nondigit
+
+J
+	nondigit
+
+K
+	nondigit
+
+L
+	encoding-prefix
+	character-literal
+	floating-suffix
+	long-suffix
+	nondigit
+
+LL
+	long-long-suffix
+
+L_PAREN
+	lparen
+
+M
+	nondigit
+
+N
+	nondigit
+
+NEWLINE
+	new-line
+
+O
+	nondigit
+
+P
+	nondigit
+
+Q
+	nondigit
+
+Q_CHAR
+	q-char
+
+R
+	string-literal
+	nondigit
+
+R_CHAR
+	r-char
+
+S
+	nondigit
+
+S_CHAR
+	s-char
+
+T
+	nondigit
+
+U
+	encoding-prefix
+	character-literal
+	unsigned-suffix
+	nondigit
+
+V
+	nondigit
+
+W
+	nondigit
+
+X
+	nondigit
+
+Y
+	nondigit
+
+Z
+	nondigit
+
+[
+	overloadable-operator
+	balanced-token
+	noptr-abstract-declarator
+	noptr-declarator
+	attribute-specifier
+	noptr-new-declarator
+	lambda-introducer
+	delete-expression
+	postfix-expression
+	preprocessing-op-or-punc
+
+[]
+	overloadable-operator
+
+\
+	octal-escape-sequence
+
+\"
+	simple-escape-sequence
+
+\'
+	simple-escape-sequence
+
+\?
+	simple-escape-sequence
+
+\U
+	universal-character-name
+
+\\
+	simple-escape-sequence
+
+\a
+	simple-escape-sequence
+
+\b
+	simple-escape-sequence
+
+\f
+	simple-escape-sequence
+
+\n
+	simple-escape-sequence
+
+\r
+	simple-escape-sequence
+
+\t
+	simple-escape-sequence
+
+\u
+	universal-character-name
+
+\v
+	simple-escape-sequence
+
+\x
+	hexadecimal-escape-sequence
+
+]
+	overloadable-operator
+	balanced-token
+	noptr-abstract-declarator
+	noptr-declarator
+	attribute-specifier
+	noptr-new-declarator
+	lambda-introducer
+	delete-expression
+	postfix-expression
+	preprocessing-op-or-punc
+
+^
+	overloadable-operator
+	exclusive-or-expression
+	preprocessing-op-or-punc
+
+^=
+	overloadable-operator
+	assignment-operator
+	preprocessing-op-or-punc
+
+_
+	nondigit
+
+a
+	hexadecimal-digit
+	nondigit
+
+alignas
+	alignment-specifier
+	keyword
+
+alignment-expression
+	alignment-specifier
+
+alignof
+	unary-expression
+	keyword
+
+and
+	preprocessing-op-or-punc
+
+and_eq
+	preprocessing-op-or-punc
+
+asm
+	asm-definition
+	keyword
+
+auto
+	simple-type-specifier
+	keyword
+
+b
+	hexadecimal-digit
+	nondigit
+
+bitand
+	preprocessing-op-or-punc
+
+bitor
+	preprocessing-op-or-punc
+
+bool
+	simple-type-specifier
+	keyword
+
+break
+	jump-statement
+	keyword
+
+c
+	hexadecimal-digit
+	nondigit
+
+case
+	labeled-statement
+	keyword
+
+catch
+	handler
+	keyword
+
+char
+	simple-type-specifier
+	keyword
+
+char16_t
+	simple-type-specifier
+	keyword
+
+char32_t
+	simple-type-specifier
+	keyword
+
+class
+	type-parameter
+	class-key
+	enum-key
+	keyword
+
+compl
+	preprocessing-op-or-punc
+
+const
+	cv-qualifier
+	keyword
+
+const_cast
+	postfix-expression
+	keyword
+
+constexpr
+	decl-specifier
+	keyword
+
+continue
+	jump-statement
+	keyword
+
+d
+	hexadecimal-digit
+	nondigit
+
+decltype
+	decltype-specifier
+	keyword
+
+default
+	function-definition
+	labeled-statement
+	keyword
+
+define
+	control-line
+
+delete
+	overloadable-operator
+	function-definition
+	delete-expression
+	preprocessing-op-or-punc
+	keyword
+
+do
+	iteration-statement
+	keyword
+
+double
+	simple-type-specifier
+	keyword
+
+dynamic_cast
+	postfix-expression
+	keyword
+
+e
+	exponent-part
+	hexadecimal-digit
+	nondigit
+	pp-number
+
+elif
+	elif-group
+
+else
+	else-group
+	selection-statement
+	keyword
+
+endif
+	endif-line
+
+enum
+	enum-key
+	elaborated-type-specifier
+	keyword
+
+error
+	control-line
+
+explicit
+	class-virt-specifier
+	function-specifier
+	keyword
+
+export
+	keyword
+
+extern
+	explicit-instantiation
+	linkage-specification
+	storage-class-specifier
+	keyword
+
+f
+	floating-suffix
+	hexadecimal-digit
+	nondigit
+
+false
+	boolean-literal
+	keyword
+
+final
+	virt-specifier
+	class-virt-specifier
+
+float
+	simple-type-specifier
+	keyword
+
+for
+	iteration-statement
+	keyword
+
+friend
+	decl-specifier
+	keyword
+
+g
+	nondigit
+
+goto
+	jump-statement
+	keyword
+
+h
+	nondigit
+
+i
+	nondigit
+
+if
+	if-group
+	selection-statement
+	keyword
+
+ifdef
+	if-group
+
+ifndef
+	if-group
+
+include
+	control-line
+
+inline
+	unnamed-namespace-definition
+	original-namespace-definition
+	extension-namespace-definition
+	function-specifier
+	keyword
+
+int
+	simple-type-specifier
+	keyword
+
+j
+	nondigit
+
+k
+	nondigit
+
+l
+	floating-suffix
+	long-suffix
+	nondigit
+
+line
+	control-line
+
+ll
+	long-long-suffix
+
+long
+	simple-type-specifier
+	keyword
+
+m
+	nondigit
+
+mutable
+	storage-class-specifier
+	lambda-declarator
+	keyword
+
+n
+	nondigit
+
+namespace
+	using-directive
+	namespace-alias-definition
+	extension-namespace-definition
+	unnamed-namespace-definition
+	original-namespace-definition
+	keyword
+
+new
+	overloadable-operator
+	virt-specifier
+	new-expression
+	preprocessing-op-or-punc
+	keyword
+
+noexcept
+	noexcept-specification
+	noexcept-expression
+	keyword
+
+not
+	preprocessing-op-or-punc
+
+not_eq
+	preprocessing-op-or-punc
+
+nullptr
+	pointer-literal
+	keyword
+
+o
+	nondigit
+
+operator
+	literal-operator-id
+	operator-function-id
+	conversion-function-id
+	keyword
+
+or
+	preprocessing-op-or-punc
+
+or_eq
+	preprocessing-op-or-punc
+
+override
+	virt-specifier
+
+p
+	nondigit
+
+pragma
+	control-line
+
+private
+	access-specifier
+	keyword
+
+protected
+	access-specifier
+	keyword
+
+public
+	access-specifier
+	keyword
+
+q
+	nondigit
+
+r
+	nondigit
+
+register
+	storage-class-specifier
+	keyword
+
+reinterpret_cast
+	postfix-expression
+	keyword
+
+return
+	jump-statement
+	keyword
+
+s
+	nondigit
+
+short
+	simple-type-specifier
+	keyword
+
+signed
+	simple-type-specifier
+	keyword
+
+sizeof
+	unary-expression
+	keyword
+
+static
+	storage-class-specifier
+	keyword
+
+static_assert
+	static_assert-declaration
+	keyword
+
+static_cast
+	postfix-expression
+	keyword
+
+struct
+	class-key
+	enum-key
+	keyword
+
+switch
+	selection-statement
+	keyword
+
+t
+	nondigit
+
+template
+	explicit-instantiation
+	keyword
+	explicit-specialization
+	pseudo-destructor-name
+	qualified-id
+	nested-name-specifier
+	postfix-expression
+	simple-type-specifier
+	template-declaration
+	elaborated-type-specifier
+	type-parameter
+	typename-specifier
+
+this
+	capture
+	primary-expression
+	keyword
+
+thread_local
+	storage-class-specifier
+	keyword
+
+throw
+	dynamic-exception-specification
+	throw-expression
+	keyword
+
+true
+	boolean-literal
+	keyword
+
+try
+	function-try-block
+	try-block
+	keyword
+
+typedef
+	decl-specifier
+	keyword
+
+typeid
+	postfix-expression
+	keyword
+
+typename
+	type-parameter
+	typename-specifier
+	using-declaration
+	keyword
+
+u
+	encoding-prefix
+	character-literal
+	unsigned-suffix
+	nondigit
+
+u8
+	encoding-prefix
+
+undef
+	control-line
+
+union
+	class-key
+	keyword
+
+unsigned
+	simple-type-specifier
+	keyword
+
+using
+	using-directive
+	using-declaration
+	alias-declaration
+	keyword
+
+v
+	nondigit
+
+virtual
+	base-specifier
+	function-specifier
+	keyword
+
+void
+	simple-type-specifier
+	keyword
+
+volatile
+	cv-qualifier
+	keyword
+
+w
+	nondigit
+
+wchar_t
+	simple-type-specifier
+	keyword
+
+while
+	iteration-statement
+	keyword
+
+x
+	nondigit
+
+xor
+	preprocessing-op-or-punc
+
+xor_eq
+	preprocessing-op-or-punc
+
+y
+	nondigit
+
+z
+	nondigit
+
+{
+	class-specifier
+	balanced-token
+	linkage-specification
+	extension-namespace-definition
+	enum-specifier
+	braced-init-list
+	compound-statement
+	unnamed-namespace-definition
+	original-namespace-definition
+	preprocessing-op-or-punc
+
+|
+	overloadable-operator
+	inclusive-or-expression
+	preprocessing-op-or-punc
+
+|=
+	overloadable-operator
+	assignment-operator
+	preprocessing-op-or-punc
+
+||
+	overloadable-operator
+	logical-or-expression
+	preprocessing-op-or-punc
+
+}
+	class-specifier
+	balanced-token
+	linkage-specification
+	extension-namespace-definition
+	enum-specifier
+	braced-init-list
+	compound-statement
+	unnamed-namespace-definition
+	original-namespace-definition
+	preprocessing-op-or-punc
+
+~
+	overloadable-operator
+	unary-operator
+	pseudo-destructor-name
+	unqualified-id
+	preprocessing-op-or-punc
+
+---------- LITERAL TABLE ENDS -------------
