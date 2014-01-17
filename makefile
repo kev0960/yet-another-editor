@@ -10,14 +10,17 @@ CFLAGS = -g -Wall -std=c++11
 # Library flags
 LIBS = -lboost_filesystem -lboost_system
 
-parser: parser.o character_input.o
-	$(CC) $(CFLAGS) parser.o character_input.o $(LIBS) -o parser
+parser: parser.o character_input.o tokenizer.o
+	$(CC) $(CFLAGS) parser.o character_input.o tokenizer.o $(LIBS) -o parser
 
 parser.o: parser.cpp parser.h
 	$(CC) $(CFLAGS) -c parser.cpp
 
 character_input.o: character_input.cpp parser.h
 	$(CC) $(CFLAGS) -c character_input.cpp
+
+tokenizer.o: tokenizer.cpp tokenizer.h
+	$(CC) $(CFLAGS) -c tokenizer.cpp
 
 # To clean up, remove all the object files and backup files
 clean:

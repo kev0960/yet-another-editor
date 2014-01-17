@@ -2,6 +2,7 @@
 // g++ -std=c++11 parser.cpp -o parser -lboost_filesystem -lboost_system
 
 #include "parser.h"
+#include "tokenizer.h"
 
 Parser::Parser(string directory_name)
 {
@@ -123,7 +124,15 @@ Parser::Parser(string directory_name)
 }
 void Parser::parse_line(string line)
 {
-    
+    Tokenizer token(line);
+    cout << "parse! " << endl;
+    for(int i = 0; i < token.term_list_.size(); i ++) {
+        string s (line.begin() + token.term_list_[i].begin, 
+                  line.begin() + token.term_list_[i].end + 1);
+        cout << token.token_type(token.term_list_[i].type) << " ( " <<
+            token.term_list_[i].begin << " , " << 
+            token.term_list_[i].end   << " ) : " << s << endl;
+    }   
 }
 
 
@@ -198,4 +207,5 @@ void Parser::print_literal_table()
 int main()
 {
     Parser p("./Parser");   
+    p.parse_line("int a = 3;");
 }   
