@@ -131,7 +131,15 @@ void Parser::parse_line(string line)
         cout << token.token_type(token.term_list_[i].type) << " ( " <<
             token.term_list_[i].begin << " , " << 
             token.term_list_[i].end   << " ) : " << s << endl;
-    }   
+    }
+
+    // After the files being parsed, now we have to 
+    // Analyze the semantic meaning of the each terms
+    // Once the tokenizer identifies each terms, 
+    // we have to make the parser to comprehend what 
+    // the each terms are. 
+
+
 }
 
 int main(int argc, char* argv[])
@@ -141,6 +149,7 @@ int main(int argc, char* argv[])
 
     while (in.good()) {
         string s; getline(in, s);
-        p.parse_line(s);
+        if(s.substr(0, 2) != "//")
+            p.parse_line(s);
     }
 }   
