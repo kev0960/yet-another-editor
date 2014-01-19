@@ -52,6 +52,7 @@ class Tokenizer
             case ':':
             case '?':
             case '^':
+            case ';':
                 return true;
             default:
                 return false;
@@ -63,6 +64,7 @@ class Tokenizer
         if('a' <= c && c <= 'z') return true;
         else if('A' <= c && c <= 'Z') return true;
         else if(c == '_') return true;
+        return false;
     }
 
     bool is_whitespace(char c)

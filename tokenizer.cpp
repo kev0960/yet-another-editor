@@ -27,12 +27,13 @@ Tokenizer::Tokenizer(string line) : line_(line)
     int begin = 0, end = 0;
     TokenType type;
 
+    cout << "PARSING :: " << line_ << endl;
+
     while (read_ptr != line_.size()) {
         // Basically remove all the whitespaces
         // Except when reading the string literals
-       
-        if(!current_reading) {
 
+        if(!current_reading) {
             if(is_digit(line_[read_ptr])) {
                 type = TokenType::NUMBER;
             }
@@ -71,27 +72,15 @@ Tokenizer::Tokenizer(string line) : line_(line)
                     continue; // Do not increase the read_ptr!
                 }
             }
-            else if(type == TokenType::IDENTIFIER) {
-                if(is_operator(line_[read_ptr]) || is_whitespace(line_[read_ptr])) {
-                    term_list_.emplace_back(Term(begin, read_ptr - 1, TokenType::IDENTIFIER));
-                    current_reading = false;
-                    continue;
-                }
-                else {
+            else if(type == TokenType::IDENTIFIER || type == TokenType::NUMBER) {
+                if(is_digit(line_[read_ptr]) || is_non_digit(line_[read_ptr])) {
                     read_ptr ++; continue;    
                 }
-            }
-            else if(type == TokenType::NUMBER) {
-                if(is_digit(line_[read_ptr])) {
+                else if(type == TokenType::NUMBER && line_[read_ptr] == '.') {
                     read_ptr ++; continue;
                 }
-                // Hexadecimal number. The x must be directly followed by
-                // 0 (prefix '0x' for the hexadecimal number)
-                else if(line_[read_ptr] == 'x' && read_ptr - begin == 1 && line_[read_ptr - 1] == '0') {
-                    read_ptr ++; continue;
-                }
-                else {
-                    term_list_.emplace_back(Term(begin, read_ptr - 1, TokenType::NUMBER));
+                else  {
+                    term_list_.emplace_back(Term(begin, read_ptr - 1, type));
                     current_reading = false;
                     continue;
                 }
@@ -120,7 +109,15 @@ Tokenizer::Tokenizer(string line) : line_(line)
             }
         }
         read_ptr ++;
+    }
+
+    // Add the last term
+    if(current_reading) {
+        term_list_.emplace_back(Term(begin, read_ptr - 1, type));
     } 
+
+    // Now parse the operators
+    operator_separater();
 }
 // Separate the operators into a comprehensible form.
 // For example, a+++b would be stored as a, +++, b. Hence
@@ -131,56 +128,56 @@ void Tokenizer::operator_separater()
 {
     vector<string> operator_list = {
         "{",
-            "}",
-            "[",
-            "]",
-            "#",
-            "##",
-            "(",
-            ")",
-            ";",
-            ":",
-            "...",
-            "?",
-            "::",
-            ".",
-            ".*",
-            "+",
-            "-",
-            "*",
-            "/",
-            "%",
-            "^",
-            "&",
-            "|",
-            "~",
-            "!",
-            "=",
-            "<",
-            ">",
-            "+=",
-            "-=",
-            "*=",
-            "/=",
-            "%=",
-            "^=",
-            "&=",
-            "|=",
-            "<<",
-            ">>",
-            ">>=",
-            "<<=",
-            "==",
-            "!=",
-            "<=",
-            ">=",
-            "&&",
-            "||",
-            "++",
-            "--",
-            ",",
-            "->*",
-            "->"
+        "}",
+        "[",
+        "]",
+        "#",
+        "##",
+        "(",
+        ")",
+        ";",
+        ":",
+        "...",
+        "?",
+        "::",
+        ".",
+        ".*",
+        "+",
+        "-",
+        "*",
+        "/",
+        "%",
+        "^",
+        "&",
+        "|",
+        "~",
+        "!",
+        "=",
+        "<",
+        ">",
+        "+=",
+        "-=",
+        "*=",
+        "/=",
+        "%=",
+        "^=",
+        "&=",
+        "|=",
+        "<<",
+        ">>",
+        ">>=",
+        "<<=",
+        "==",
+        "!=",
+        "<=",
+        ">=",
+        "&&",
+        "||",
+        "++",
+        "--",
+        ",",
+        "->*",
+        "->"
     };
 
     // The operator separating is greedy match. Find
@@ -205,18 +202,14 @@ void Tokenizer::operator_separater()
                         operator_match.clear();
 
                         begin = j;
-
-                        // When ends
-                        if(j == term_list_[i].end) break;
-
                         j --; continue; 
                     }
-                    // When it goes to the end while forming up the operator, then that
-                    // is it!
-                    if(j == term_list_[i].end) {
-                        added_operator.emplace_back(Term(begin, j - 1, TokenType::OPERATOR));
-                    }
-                }
+                } 
+            }
+            // When it goes to the end while forming up the operator, then that
+            // is it!
+            if(!operator_match.empty()) {
+                added_operator.emplace_back(Term(begin, term_list_[i].end, TokenType::OPERATOR));
             }
             // Remove the previously added operators
             term_list_.erase(term_list_.begin() + i, term_list_.begin() + i + 1);

@@ -21,7 +21,7 @@ Parser::Parser(string directory_name)
     }
 
     // Read the Lex files. 
-    for(int i = 0; i < file_list.size(); i ++) {
+    for(auto i = 0; i < file_list.size(); i ++) {
         ifstream read_file(file_list[i].c_str());
 
         cout << file_list[i] << endl;
@@ -32,7 +32,7 @@ Parser::Parser(string directory_name)
             getline(read_file, line);
 
             // Remove the preceding whitespaces
-            for(int i = 0; i < line.size(); i ++) {
+            for(auto i = 0; i < line.size(); i ++) {
                 if(line[i] == ' ' || line[i] == '\t' || line[i] == '\n') {
                     line.erase(i, 1);
                     i --;
@@ -84,13 +84,13 @@ Parser::Parser(string directory_name)
     }
 
     // Create a reverse version of BNF Grammar
-    for(int i = 0; i < bnf_grammar_.size(); i ++) {
+    for(auto i = 0; i < bnf_grammar_.size(); i ++) {
         Symbol sym = bnf_grammar_[i];
         if(sym.symbol_name[0] == '@')
             sym.symbol_name.erase(0, 1);
 
-        for(int j = 0; j < sym.symbol_definition.size(); j ++) {
-            for(int k = 0; k < sym.symbol_definition[j].size(); k ++) {
+        for(auto j = 0; j < sym.symbol_definition.size(); j ++) {
+            for(auto k = 0; k < sym.symbol_definition[j].size(); k ++) {
                 string term = sym.symbol_definition[j][k];
 
                 // Remove the 'option' notation symbol
@@ -125,8 +125,7 @@ Parser::Parser(string directory_name)
 void Parser::parse_line(string line)
 {
     Tokenizer token(line);
-    cout << "parse! " << endl;
-    for(int i = 0; i < token.term_list_.size(); i ++) {
+    for(auto i = 0; i < token.term_list_.size(); i ++) {
         string s (line.begin() + token.term_list_[i].begin, 
                   line.begin() + token.term_list_[i].end + 1);
         cout << token.token_type(token.term_list_[i].type) << " ( " <<
@@ -135,77 +134,13 @@ void Parser::parse_line(string line)
     }   
 }
 
-
-void Parser::remove_whitespace(string& str)
-{
-    for(int i = 0; i < str.size(); i ++) {
-        if(str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\r') {
-            str.erase(i, 1); i --;
-        }   
-    }
-}
-bool Parser::grammar_contains_term(string& s)
-{
-    for(auto itr = bnf_grammar_.begin(); itr != bnf_grammar_.end(); itr ++) {
-        if(itr->symbol_name == s) return true;
-    }
-    return false; 
-}
-bool Parser::contains(vector<string>& vec, string s)
-{
-    vector<string>::iterator itr = vec.begin();
-    while (itr != vec.end()) {
-        if(*itr == s) return true;
-        itr ++;
-    }
-    return false; 
-}
-void Parser::print_symbol_table()
-{
-    // Print the Symbol Table
-    for(int i = 0; i < bnf_grammar_.size(); i ++) {
-        cout << bnf_grammar_[i].symbol_name << endl;
-        for(int j = 0; j < bnf_grammar_[i].symbol_definition.size(); j ++) {
-            cout << "\t::== ";
-            for(int k = 0; k < bnf_grammar_[i].symbol_definition[j].size(); k ++) {
-                cout << bnf_grammar_[i].symbol_definition[j][k] << " ";
-            }
-            cout << endl;
-        }
-    }
-}
-void Parser::print_reverse_table()
-{
-    ofstream out("log.txt");
-    out << "---------- REVERSE TABLE BEGINS ------------" << endl;
-    for(auto itr = reverse_grammar_.begin(); itr != reverse_grammar_.end(); itr ++) {
-        out << itr->first << endl;
-        for(auto itr2 = itr->second.begin(); itr2 != itr->second.end(); itr2 ++) {
-            out << "\t" << *itr2 << endl;
-        }
-        out << endl;
-    }
-    out << "---------- REVERSE TABLE ENDS  -------------" << endl;
-    out.close();
-}
-
-void Parser::print_literal_table()
-{
-    ofstream out("log.txt");
-    
-    out << "---------- LITERAL TABLE BEGINS ------------" << endl;
-    for(auto itr = literal_.begin(); itr != literal_.end(); itr ++) {
-        out << itr->first << endl;
-        for(auto itr2 = itr->second.begin(); itr2 != itr->second.end(); itr2 ++) {
-            out << "\t" << *itr2 << endl;
-        }
-        out << endl;
-    }
-    out << "---------- LITERAL TABLE ENDS -------------" << endl;
-}
-
-int main()
+int main(int argc, char* argv[])
 {
     Parser p("./Parser");   
-    p.parse_line("int a = 3;");
+    ifstream in("./Source/source");
+
+    while (in.good()) {
+        string s; getline(in, s);
+        p.parse_line(s);
+    }
 }   
